@@ -1,1 +1,1 @@
-# ITP-Thesis-Alumni-Feedback-Prototype
+# PaulineOC/ITP-Thesis-Frontend
