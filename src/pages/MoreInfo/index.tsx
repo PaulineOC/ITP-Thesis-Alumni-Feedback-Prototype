@@ -17,6 +17,8 @@ import {
     ImageList,
     ImageListItem,
 } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+
 
 import MainStore from '../../stores/main';
 import { Artwork } from '../../utils/apiModels';
@@ -73,12 +75,13 @@ const MoreInfo: FunctionComponent = (props): ReactElement | null => {
         open: false,
     });
 
-
-
-    const saveToCollection = (photoString: string, e: any ) => {
-        setState({
-            open: true,
-        });
+    const saveToCollection = () => {
+        if(item){
+            store.addArtWorkToCollection(item);
+            setState({
+                open: true,
+            });
+        }
     };
 
     const handleClose = () => {
@@ -86,22 +89,103 @@ const MoreInfo: FunctionComponent = (props): ReactElement | null => {
             open: false,
         });
     };
-    //
-    //
-    // const onButtonClick = () => {
-    //     console.log('Welcome --> Choose Objects');
-    //
-    //     navigate('/choose-objects');
-    // };
+
+    const goToRoomBuilder = () => {
+        navigate('/room-builder');
+    };
+
+    const goToChooseObjects = () => {
+        navigate('/choose-objects');
+    };
+
+    const renderDialog = () => {
+        return (
+            <Dialog
+                open={currState.open}
+                onClose={handleClose}
+                maxWidth={'lg'}
+            >
+
+                <DialogTitle >
+                    {currState.open ? (
+                        <IconButton
+                            aria-label="close"
+                            onClick={handleClose}
+                            sx={{
+                                float: 'right',
+                                color: (theme) => theme.palette.grey[500],
+                            }}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                    ) : null}
+                </DialogTitle>
+
+                <DialogContent>
+                    Do you want to try out the room builder and envision your collection?
+                </DialogContent>
+
+                <DialogActions sx={{ display: 'flex', justifyContent: 'space-between',
+                    paddingTop: '2%', paddingBottom: '2%'}}
+                >
+
+                    <Button onClick={handleClose}
+                            variant="contained"
+                            className={"cancelButton"}
+                    >
+                        No, not right now
+                    </Button>
+                    <Button onClick={goToRoomBuilder}
+                            variant="contained"
+                            color="error"
+                    >
+                        Yes, take me there
+                    </Button>
+
+                </DialogActions>
+            </Dialog>
+
+        );
+    };
 
     return isNil(item) ? null : (
         <Container sx={{paddingTop: "2%", paddingBottom: "2%"}}>
+
+            {renderDialog()}
+
             <Stack
                 id={"container"}
                 spacing={2}
                 direction={"column"}
                 sx={{width: '100%', height: '100%', display:'flex', alignItems: 'center'}}
             >
+                <Box sx={{display: 'flex', paddingTop: '2%', paddingBottom: '2%', width: '100%', justifyContent: 'space-between'}}>
+
+                    <Button
+                        component="span"
+                        variant="contained"
+                        color="error"
+                        onClick={goToChooseObjects}
+                        className={"cancelButton"}
+                    >
+                        BACK TO PERUSING OBJECTS
+                    </Button>
+
+                    <Button
+                        component="span"
+                        variant="contained"
+                        color="error"
+                        onClick={saveToCollection}
+                    >
+                        SAVE TO MY COLLECTION
+                    </Button>
+
+
+
+
+                </Box>
+
+
                 <Box className={"mainInfo"}>
                     <Box className={"infoContainer"}>
                         <Typography variant={"h5"} component="h5">
@@ -118,9 +202,13 @@ const MoreInfo: FunctionComponent = (props): ReactElement | null => {
                     </Box>
                 </Box>
 
+                <Typography variant={"subtitle1"} component="p" id={"moreDetails"} >
+                    [More Details]
+                </Typography>
+
             </Stack>
         </Container>
-        );
+    );
 };
 
 export default MoreInfo;

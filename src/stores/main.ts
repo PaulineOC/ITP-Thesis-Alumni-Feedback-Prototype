@@ -23,9 +23,34 @@ class MainStore {
         this.allCollection = sampleData;
     }
 
+    @observable
+    leftWallArt: Artwork | null = null;
+
+    @observable
+    backWallArt: Artwork | null = null;
+
+    @observable
+    rightWallArt: Artwork | null = null;
+
+
     @action.bound
     addArtWorkToCollection(art: Artwork): void {
         this.userCollection?.push(art);
+    }
+
+    @action.bound
+    setLeftWallArt(art: Artwork): void {
+        this.leftWallArt = art;
+    }
+
+    @action.bound
+    setBackWallArt(art: Artwork): void {
+        this.backWallArt = art;
+    }
+
+    @action.bound
+    setRightWallArt(art: Artwork): void {
+        this.rightWallArt = art;
     }
 
 }

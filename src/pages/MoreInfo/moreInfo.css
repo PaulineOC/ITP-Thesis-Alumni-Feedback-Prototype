@@ -4,8 +4,19 @@
     justifyContent: space-between;
 }
 
+.cancelButton{
+    background-color: #bbb !important;
+}
+
 .infoContainer{
     width: 50%;
+}
+
+
+#moreDetails{
+    background-color: lightgray;
+    height: 10vh;
+    width: 100%;
 }
 
 .description{
@@ -24,7 +35,7 @@
 }
 
 .landscape-img{
-    max-width: 33%;
+    max-width: 100%;
     /*object-fit: contain;*/
     padding-bottom: 2%;
 }

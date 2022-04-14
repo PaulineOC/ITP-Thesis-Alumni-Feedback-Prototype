@@ -28,7 +28,7 @@ const ImageGrid: FunctionComponent<ImageGridProps> = ({allArtworks}: ImageGridPr
     return (
         <Box sx={{display: 'flex', justifyContent: 'center'}}>
            
-            <ImageList cols={3} rowHeight={200} gap={8}>
+            <ImageList cols={3} rowHeight={600} gap={8}>
                 {allArtworks.slice().map((art, ind)=>{
                     return (
                         <ImageListItem key={art.metId}>

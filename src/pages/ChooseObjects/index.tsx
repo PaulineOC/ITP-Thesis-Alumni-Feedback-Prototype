@@ -6,9 +6,9 @@ import {
     Button
 } from '@mui/material';
 
-import { Artwork } from '../../utils/apiModels';
 import ImageGrid from '../../components/ImageGrid';
 import MainStore from '../../stores/main';
+import {useNavigate} from 'react-router';
 
 type ChooseObjects = {
     
@@ -16,6 +16,11 @@ type ChooseObjects = {
 const ChooseObjects: FunctionComponent<ChooseObjects> = ({}: ChooseObjects): ReactElement => {
 
     const store = MainStore;
+    const navigate = useNavigate();
+
+    const goToRoomBuilder = () => {
+        navigate('/room-builder');
+    };
 
     return (
 
@@ -30,6 +35,15 @@ const ChooseObjects: FunctionComponent<ChooseObjects> = ({}: ChooseObjects): Rea
                 </Typography>
 
                 <ImageGrid allArtworks={store.allCollection?.slice() ?? []}/>
+
+                <Button
+                    component="span"
+                    variant="contained"
+                    color="error"
+                    onClick={goToRoomBuilder}
+                >
+                    CHECK OUT ROOM BUILDER
+                </Button>
 
             </Stack>
         </Container>

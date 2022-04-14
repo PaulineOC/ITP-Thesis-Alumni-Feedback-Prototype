@@ -8,6 +8,7 @@ import NavBar from './components/NavBar';
 import Welcome from './pages/Welcome';
 import ChooseObjects from './pages/ChooseObjects';
 import MoreInfo from './pages/MoreInfo';
+import RoomBuilder from './pages/RoomBuilder'
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <Route path = "//more-info/:objectId" element={<MoreInfo/>}/>
 
           <Route path = "/room-builder-intro" element={<ChooseObjects/>}/>
-          <Route path = "/room-builder" element={<ChooseObjects/>}/>
+          <Route path = "/room-builder" element={<RoomBuilder/>}/>
           </Routes>
         </div>
     </BrowserRouter>
