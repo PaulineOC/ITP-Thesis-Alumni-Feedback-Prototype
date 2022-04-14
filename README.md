@@ -1,1 +1,1 @@
-# PaulineOC/ITP-Thesis-Frontend
+ITP-Thesis-Frontend
