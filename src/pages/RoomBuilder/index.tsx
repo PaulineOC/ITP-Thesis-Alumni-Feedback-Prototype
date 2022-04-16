@@ -12,7 +12,15 @@ const RoomBuilder  = () => {
     return (
         <div>
             <p>Room Builder:</p>
-            <Unity unityContext={unityContext} />
+            <Unity
+                unityContext={unityContext}
+                style={{
+                    width: 360,
+                    height: 640,
+                    border: "2px solid black",
+                    background: "grey",
+                }}
+            />
         </div>
 
     );
