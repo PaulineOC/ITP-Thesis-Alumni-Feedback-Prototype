@@ -18,15 +18,34 @@ function NavBar() {
             <AppBar
                 position="static"
             >
-                <Toolbar className={"nav"}>
-
-                    <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingRight: '4vw'}}>
-                        <img src={logo} id={"logo"}/>
+                <Toolbar
+                    className={"nav"}
+                    style={{
+                        height: '60px'}}
+                >
+                    <Box sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        paddingRight: '4vw'}}>
+                        <img src={logo}
+                             id={"logo"}
+                             style={{
+                                 height: '40px',
+                             }}
+                        />
                     </Box>
 
                     <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-                        <Typography color="white" variant="h4" component="h4">
-                            Collection & Room Builder
+                        <Typography
+                            color="white"
+                            variant="h4"
+                            component="h4"
+                            style={{
+                                fontSize: '1.5rem'
+                            }}
+                        >
+                            The Curator & Room Builder
                         </Typography>
                     </Box>
 
