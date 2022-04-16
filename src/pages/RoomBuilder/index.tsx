@@ -9,7 +9,13 @@ const unityContext = new UnityContext({
 });
 
 const RoomBuilder  = () => {
-    return <Unity unityContext={unityContext} />;
+    return (
+        <div>
+            <p>Room Builder:</p>
+            <Unity unityContext={unityContext} />
+        </div>
+
+    );
 };
 
 export default RoomBuilder;
