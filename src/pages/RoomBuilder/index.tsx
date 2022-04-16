@@ -15,8 +15,8 @@ const RoomBuilder  = () => {
             <Unity
                 unityContext={unityContext}
                 style={{
-                    width: 360,
-                    height: 640,
+                    width: 320,
+                    height: 480,
                     border: "2px solid black",
                     background: "grey",
                 }}
