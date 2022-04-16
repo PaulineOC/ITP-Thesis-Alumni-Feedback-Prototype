@@ -1,0 +1,22 @@
+#artSpace{
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    border: 2px solid black;
+}
+
+.artContainer{
+    height: 100%;
+    width: 33.33%;
+    backgroundColor: 'beige';
+    border: 2px dashed black;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+
+.wallImg{
+    max-width: 50%;
+    object-fit: cover;
+}
