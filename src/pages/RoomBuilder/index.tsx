@@ -2,10 +2,10 @@ import React, { useEffect,useState } from 'react';
 import Unity, { UnityContext } from 'react-unity-webgl';
 
 const unityContext = new UnityContext({
-    loaderUrl: "v6.loader.js",
-    dataUrl: "v6.data",
-    frameworkUrl: "v6.framework.js",
-    codeUrl: "v6.wasm",
+    loaderUrl: "v7.loader.js",
+    dataUrl: "v7.data",
+    frameworkUrl: "v7.framework.js",
+    codeUrl: "v7.wasm",
 });
 
 const RoomBuilder  = () => {
