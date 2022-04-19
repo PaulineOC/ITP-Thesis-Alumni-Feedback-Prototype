@@ -5,7 +5,7 @@ const unityContext = new UnityContext({
     loaderUrl: "v4B.loader.js",
     dataUrl: "v4B.data",
     frameworkUrl: "v4B.framework.js",
-    codeUrl: "v4AB.wasm",
+    codeUrl: "v4B.wasm",
 });
 
 const RoomBuilder  = () => {
