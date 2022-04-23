@@ -45,7 +45,7 @@ function NavBar() {
                                 fontSize: '1.5rem'
                             }}
                         >
-                            The Curator & Room Builder
+                            My Met
                         </Typography>
                     </Box>
 
