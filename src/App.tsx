@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter, Routes,  Route } from 'react-router-dom';
+import { BrowserRouter, Routes,  Route, Switch } from 'react-router-dom';
 
 import './App.css';
 import NavBar from './components/NavBar';
@@ -11,25 +11,20 @@ import MoreInfo from './pages/MoreInfo';
 import RoomBuilderV1 from './pages/RoomBuilder-V1';
 import RoomBuilder from './pages/RoomBuilder';
 
-
-//if i want to change the
-//
-//
-
 function App() {
   return (
     <BrowserRouter>
       <NavBar/>
         <div className="App">
-          <Routes>
-          <Route path = "/welcome" element={<Welcome/>}/>
-          <Route path = "/choose-objects" element={<ChooseObjects/>}/>
-          <Route path = "//more-info/:objectId" element={<MoreInfo/>}/>
+          <Switch>
+            <Route path = "/welcome" element={<Welcome/>}/>
+            <Route path = "/choose-objects" element={<ChooseObjects/>}/>
+            <Route path = "//more-info/:objectId" element={<MoreInfo/>}/>
 
-          <Route path = "/room-builder-intro" element={<ChooseObjects/>}/>
-          <Route path = "/room-builder-unity" element={<RoomBuilder/>}/>
-          <Route path = "/room-builder" element={<RoomBuilderV1/>}/>
-          </Routes>
+            <Route path = "/room-builder-intro" element={<ChooseObjects/>}/>
+            <Route path = "/room-builder-unity" element={<RoomBuilder/>}/>
+            <Route path = "/room-builder" element={<RoomBuilderV1/>}/>
+          </Switch>
         </div>
     </BrowserRouter>
   );
