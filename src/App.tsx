@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter, Routes,  Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes,  Route } from 'react-router-dom';
 
 import './App.css';
 import NavBar from './components/NavBar';
@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <NavBar/>
         <div className="App">
-          <Switch>
+          <Routes>
             <Route path = "/welcome" element={<Welcome/>}/>
             <Route path = "/choose-objects" element={<ChooseObjects/>}/>
             <Route path = "//more-info/:objectId" element={<MoreInfo/>}/>
@@ -24,7 +24,7 @@ function App() {
             <Route path = "/room-builder-intro" element={<ChooseObjects/>}/>
             <Route path = "/room-builder-unity" element={<RoomBuilder/>}/>
             <Route path = "/room-builder" element={<RoomBuilderV1/>}/>
-          </Switch>
+          </Routes>
         </div>
     </BrowserRouter>
   );
