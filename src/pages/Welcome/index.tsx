@@ -47,16 +47,6 @@ const Welcome: FunctionComponent = (props): ReactElement => {
         //return true;
     }, [isPageSubmitted, username]);
 
-
-    const validateTest = useCallback(()=>{
-        console.log(isPageSubmitted);
-        if(isPageSubmitted){
-
-            console.log("HAPPY");
-            return true;
-        }
-    },[isPageSubmitted]);
-
     const onButtonClick = async (e: FormEvent) => {
 
         if(!isPageSubmitted){
@@ -64,14 +54,14 @@ const Welcome: FunctionComponent = (props): ReactElement => {
         }
 
         if(!!username){
-            console.log('USERNAME VALID: ');
-            //console.log('Welcome --> Choose Objects');
             const user = {
                 username,
             } as User;
 
-            await ApiService.createUser({user});
-                //navigate('/choose-objects')
+            const { data } = await ApiService.createUser({user});
+            const newCookie = `unique_id=${data.uniqueId};expires=${new Date('December 31, 2025 23:50:00')}`;
+            document.cookie = newCookie;
+            //navigate('/choose-objects')
         }
     };
   
