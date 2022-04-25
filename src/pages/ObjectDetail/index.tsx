@@ -74,7 +74,6 @@ class ObjectDetail extends React.Component<any>{
                 if(username !== undefined ){
                     this.store.setUserName(username.split(('='))[1]);
                 }
-
             }
         }
     }

@@ -4,7 +4,8 @@ import enums from './enums.ts';
 export type User = {
     id?: string,
     username: string,
-    cookie?: string,
+    uniqueId?: string,
+    toAdd?: enums.DB_TITLE,
     screenshots?: any,
 };
 

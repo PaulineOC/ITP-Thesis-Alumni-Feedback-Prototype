@@ -6,6 +6,29 @@ class ApiService {
     async createUser(body: {user: User}){
         return http.post('/users/create', body);
     }
+
+    async addObjectToUserCollection(body: { user: User }){
+        return http.patch('/users/add-to-saved-art/', body);
+    }
+
+    async getUser(id: string, uniqueId: string){
+
+        // router.get('/get/:userId', async function(req, res, next){
+        //     const { userId } = req.params;
+        //     const { uniqueId } = req.query;
+        //     console.log("Get User by Ids: ", userId, uniqueId);
+        //     const foundUser = await UserModel.getUserById(userId, uniqueId);
+        //     if(_.isEmpty(foundUser)){
+        //         res.send({error: ('UserId does not exist')});
+        //     }
+        //     else{
+        //         res.send({user: foundUser});
+        //     }
+        // });
+        return http.get(`/users/get/${id}?uniqueId=${uniqueId}`);
+    }
+
+
     //All
     async getAllContentSummary(){
         return http.get('/');
