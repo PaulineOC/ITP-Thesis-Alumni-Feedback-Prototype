@@ -59,9 +59,11 @@ const Welcome: FunctionComponent = (props): ReactElement => {
             } as User;
 
             const { data } = await ApiService.createUser({user});
-            const newCookie = `unique_id=${data.uniqueId};expires=${new Date('December 31, 2025 23:50:00')}`;
-            document.cookie = newCookie;
-            //navigate('/choose-objects')
+            const uniqueIdCookie = `unique_id=${data.uniqueId};expires=${new Date('December 31, 2025 23:50:00')}`;
+            const usernameCookie = `username=${data.username};expires=${new Date('December 31, 2025 23:50:00')}`;
+            document.cookie = uniqueIdCookie;
+            document.cookie = usernameCookie;
+            //navigate('/choose-objects');
         }
     };
   
