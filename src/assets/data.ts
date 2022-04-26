@@ -1,6 +1,7 @@
 import { Artwork } from '../utils/apiModels'
 import enums from '../utils/enums';
 
+import madameX from  './madamex.jpeg';
 /*
 TEMPLATE:
   {
@@ -43,6 +44,56 @@ export const OBJECT_DATA = [
             "Accession Number": '67.187.123',
         },
     },
+    {
+        metId: 11207,
+        dbTitle: enums. DB_TITLE.FLOWER_GIRL,
+        department: enums.DEPARTMENTS.AMERICAN_WING,
+        imgSrc: `https://images.metmuseum.org/CRDImages/ad/original/DT2784.jpg`,
+        title: `The Flower Girl`,
+        date: `1846`,
+        creator: `Charles Cromwell Ingham`,
+        creatorNationality: `American born  Ireland`,
+        placeOfOrigin: null,
+        metLocation: `On View At the Met Fifth Avenue in Gallery 756`,
+        description: `
+        The Irish-born Ingham was familiar with European depictions of street vendors hawking their wares. The choice of a flower girl as a subject for this work—rather than, for example, a newsboy—reveals the artist’s preference for female models and his passion for painting clearly identifiable flowers with chromatic lushness. The young woman’s plain dress and head covering contrast with her basket holding nearly twenty intensely colored flowers. In her right hand, she offers a potted fuchsia in a gesture emblematic of Flora, the Roman goddess of flowers. The plant itself is symbolic of love.`,
+        artworkDetails: {
+            Title: `The Flower Girl`,
+            Artist: `Charles Cromwell Ingham (American (born Ireland), Dublin 1786–1863 New York)`,
+            Date: `1846`,
+            Culture: `American`,
+            Medium: `Oil on canvas`,
+            Dimensions: `36 x 28 3/8 in. (91.4 x 72.1 cm)`,
+            "Credit Line": `Gift of William Church Osborn, 1902`,
+            "Accession Number": '02.71',
+        },
+    },
+    {
+        metId: 12127,
+        dbTitle: enums. DB_TITLE.MADAME_X,
+        department: enums.DEPARTMENTS.AMERICAN_WING,
+        imgSrc: madameX,
+        title: `Madame X (Madame Pierre Gautreau)`,
+        date: `1883-84`,
+        creator: `John Singer Sargent`,
+        creatorNationality: `American`,
+        placeOfOrigin: null,
+        metLocation: `On View At the Met Fifth Avenue in Gallery 771`,
+        description: `
+        Madame Pierre Gautreau (the Louisiana-born Virginie Amélie Avegno; 1859–1915) was known in Paris for her artful appearance. Sargent hoped to enhance his reputation by painting and exhibiting her portrait. Working without a commission but with his sitter’s complicity, he emphasized her daring personal style, showing the right strap of her gown slipping from her shoulder. At the Salon of 1884, the portrait received more ridicule than praise. Sargent repainted the shoulder strap and kept the work for over thirty years. When, eventually, he sold it to the Metropolitan, he commented, “I suppose it is the best thing I have done,” but asked that the Museum disguise the sitter’s name.
+        `,
+        artworkDetails: {
+            Title: `The Flower Girl`,
+            Artist: `Charles Cromwell Ingham (American (born Ireland), Dublin 1786–1863 New York)`,
+            Date: `1846`,
+            Culture: `American`,
+            Medium: `Oil on canvas`,
+            Dimensions: `36 x 28 3/8 in. (91.4 x 72.1 cm)`,
+            "Credit Line": `Gift of William Church Osborn, 1902`,
+            "Accession Number": '02.71',
+        },
+    },
+
 ];
 
 export const sampleData = [

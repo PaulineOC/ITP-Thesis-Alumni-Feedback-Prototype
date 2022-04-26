@@ -202,7 +202,7 @@ class ObjectDetail extends React.Component<any>{
 
                                 </Box>
 
-                                <Typography variant={"body2"} component="h5">
+                                <Typography variant={"body2"} component="h5" id={"descriptionParagraph"}>
                                     {this.currMetObj.description}
                                 </Typography>
 

@@ -1,3 +1,15 @@
+
+#mainImg{
+    width: 100%;
+}
+
+
+#descriptionParagraph{
+    width: 90% !important;
+}
+
+/*OLD BELOW*/
+
 .mainInfo{
     width: 100%;
     display: flex;
