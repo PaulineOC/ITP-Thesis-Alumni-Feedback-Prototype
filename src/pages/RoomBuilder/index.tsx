@@ -17,7 +17,8 @@ const unityContext = new UnityContext({
 });
 
 const RoomBuilder  = () => {
-
+    
+    //use effect fires BEFORE unity is loaded
     const store = new UserStore();
 
     const [userName , setUsername ] = useState('');
@@ -25,10 +26,11 @@ const RoomBuilder  = () => {
 
     // From Front-end --> Unity
     useEffect(() => {
-
+        console.log('FE: First Use Effect is Firing:');
         //This didn't seem to fire?
         unityContext.send("DataListener","SpawnEnemies", 1);
 
+        console.log("FE: before GetCookies");
         const GetCookies = (store: UserStore) => {
             const userCookies = document.cookie;
             if(userCookies !== undefined ){
@@ -40,7 +42,6 @@ const RoomBuilder  = () => {
                     });
 
                     if(idCookie !== undefined ){
-                        console.log("Hi");
                         store.setUserId(idCookie.split(('='))[1]);
                     }
 
