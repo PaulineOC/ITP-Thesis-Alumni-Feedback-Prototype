@@ -10,10 +10,10 @@ import {
 } from '@mui/material';
 
 const unityContext = new UnityContext({
-    loaderUrl: "4-26-v2.loader.js",
-    dataUrl: "4-26-v2.data",
-    frameworkUrl: "4-26-v2.framework.js",
-    codeUrl: "4-26-v2.wasm",
+    loaderUrl: "FE-Test-2.loader.js",
+    dataUrl: "FE-Test-2.data",
+    frameworkUrl: "FE-Test-2.framework.js",
+    codeUrl: "FE-Test-2.wasm",
 });
 
 const RoomBuilder  = () => {
@@ -24,13 +24,17 @@ const RoomBuilder  = () => {
     const [userName , setUsername ] = useState('');
     const [ savedObjs, setSavedObjs] = useState<string[]>([]);
 
+    useEffect(function () {
+        unityContext.on("loaded", function () {
+            console.log("Unity is loaded, sending saved objects: ", savedObjs.join(','));
+            unityContext.send("DataListener","SpawnEnemies", 1);
+            unityContext.send("GameManager", "ReceiveDataFromFrontEnd", savedObjs.join(','));
+        });
+    }, [savedObjs]);
+
     // From Front-end --> Unity
     useEffect(() => {
         console.log('FE: First Use Effect is Firing:');
-        //This didn't seem to fire?
-        unityContext.send("DataListener","SpawnEnemies", 1);
-
-        console.log("FE: before GetCookies");
         const GetCookies = (store: UserStore) => {
             const userCookies = document.cookie;
             if(userCookies !== undefined ){
@@ -67,6 +71,8 @@ const RoomBuilder  = () => {
             try {
                 const savedArt = await store.getUserSavedObjs();
                 setSavedObjs(savedArt);
+
+                console.log("set saved objs");
             } catch (error) {
                 console.log("error", error);
             }
@@ -75,14 +81,6 @@ const RoomBuilder  = () => {
         setUsername(store.userName ?? '')
     }, []);
 
-
-    // useEffect(function () {
-    //     console.log("Downloaded SavedObjs, sending to Unity: ", savedObjs);
-    //     unityContext.send("DataListener","SpawnEnemies", 1);
-    //     //unityContext.send("GameManager", "ReceiveDataFromFrontEnd", 'TEST-STRING');
-    //     //unityContext.send("GameManager", "ReceiveDataFromFrontEnd", savedObjs.join(','));
-    // },[savedObjs]);
-
     // From Unity --> Front-end
     useEffect(function () {
         unityContext.on("SendScreenshot", (imgData)=>{
@@ -90,6 +88,7 @@ const RoomBuilder  = () => {
         });
     }, []);
 
+    //Used for showing Unity Debug Logs
     useEffect(function () {
         unityContext.on("debug", function (message) {
             console.log(message);
