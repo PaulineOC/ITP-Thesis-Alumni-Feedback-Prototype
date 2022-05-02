@@ -22,9 +22,8 @@ function App() {
             <Route path = "/choose-objects" element={<ChooseObjects/>}/>
             <Route path = "/more-info/:objectId" element={<ObjectDetail/>}/>
 
-            <Route path = "/room-builder-intro" element={<ChooseObjects/>}/>
-            <Route path = "/room-builder-unity" element={<RoomBuilder/>}/>
-            <Route path = "/room-builder" element={<RoomBuilderV1/>}/>
+            <Route path = "/room-builder" element={<RoomBuilder/>}/>
+            <Route path = "/room-builder-v1" element={<RoomBuilderV1/>}/>
           </Routes>
         </div>
     </BrowserRouter>
