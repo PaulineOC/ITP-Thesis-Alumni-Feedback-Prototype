@@ -6,7 +6,10 @@ export type User = {
     username: string,
     uniqueId?: string,
     toAdd?: enums.DB_TITLE,
-    screenshots?: any,
+    wallImagesToSave?: string[],
+    savedWallImages?: string[],
+    overheadImagesToSave?: string[],
+    savedOverheadImages?: string[],
 };
 
 

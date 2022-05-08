@@ -8,7 +8,6 @@ import {
 import ApiService from '../utils/api';
 import { User } from '../utils/apiModels';
 
-
 import isEmpty from 'lodash/isEmpty';
 import uniqBy from 'lodash/uniqBy';
 import isNil from 'lodash/isNil';
@@ -105,7 +104,30 @@ class UserStore {
         catch(e){
             this.setStatus(enums.STATUS.FAILURE);
         }
+    }
 
+    @action.bound
+    async UpdateUserWallImages(wallImages: string[]){
+        try{
+            this.setStatus(enums.STATUS.PENDING);
+
+            const user = {
+                id: this.userId,
+                username: this.userName,
+                uniqueId: this.userUniqueId,
+                wallImagesToSave: wallImages,
+            } as User;
+
+            const { data }  = await ApiService.uploadUserWallImages({user});
+
+            // if(data && data.user && data.user.savedArt){
+            //     this.setStatus(enums.STATUS.SUCCESS);
+            //     return data.user.savedArt ?? [];
+            // }
+        }
+        catch(e) {
+            this.setStatus(enums.STATUS.FAILURE);
+        }
     }
 
 
