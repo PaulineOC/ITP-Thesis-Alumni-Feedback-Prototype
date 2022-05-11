@@ -59,19 +59,23 @@ const Welcome: FunctionComponent = (props): ReactElement => {
             } as User;
 
             const { data } = await ApiService.createUser({user});
-            const idCookie = `user_id=${data.id};expires=${new Date('December 31, 2025 23:50:00')}`;
-            const uniqueIdCookie = `unique_id=${data.uniqueId};expires=${new Date('December 31, 2025 23:50:00')}`;
-            const usernameCookie = `username=${data.username};expires=${new Date('December 31, 2025 23:50:00')}`;
-            document.cookie = idCookie;
-            document.cookie = uniqueIdCookie;
-            document.cookie = usernameCookie;
-            //navigate('/choose-objects');
+            if(data){
+
+                const idCookie = `user_id=${data.id};expires=${new Date('December 31, 2025 23:50:00')}`;
+                const uniqueIdCookie = `unique_id=${data.uniqueId};expires=${new Date('December 31, 2025 23:50:00')}`;
+                const usernameCookie = `username=${data.username};expires=${new Date('December 31, 2025 23:50:00')}`;
+                document.cookie = idCookie;
+                document.cookie = uniqueIdCookie;
+                document.cookie = usernameCookie;
+                navigate('/signup-confirmation');
+            }
+
         }
     };
   
     return (
 
-        <Container sx={{paddingTop: "2%", paddingBottom: "2%"}}>
+        <Container sx={{paddingTop: "4vh", paddingBottom: "4vh"}}>
             <Stack
                 spacing={4}
                  direction={"column"}
@@ -82,7 +86,7 @@ const Welcome: FunctionComponent = (props): ReactElement => {
                 </Typography>
 
                 <Typography variant={"body1"} component={"p"}>
-                    [INSTRUCTIONS]
+                    In this experience you will be able to scan artworks you’re interested, save them to your profile, and then place them in your own virtual space.
                 </Typography>
 
                 <TextField

@@ -158,7 +158,7 @@ class ObjectDetail extends React.Component<any>{
 
                 case enums.STATUS.SUCCESS:
                     return (
-                        <Container sx={{paddingTop: "2%", paddingBottom: "2%"}}>
+                        <Container sx={{paddingTop: "1vh", paddingBottom: "1vh"}}>
                             <Stack
                                 id={"container"}
                                 spacing={2}
@@ -224,7 +224,7 @@ class ObjectDetail extends React.Component<any>{
                                 </Box>
 
                                 <Typography variant={"body2"} component="h5" id={"descriptionParagraph"}>
-                                    {this.currMetObj.description}
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris accumsan vulputate mollis. Quisque maximus mi eu augue ultricies rhoncus. Vestibulum ac orci eget odio congue mattis. Curabitur id sapien nec sem mattis porta non eu enim. Sed elementum metus dignissim faucibus porta. Ut ullamcorper neque in placerat interdum. Pellentesque pharetra erat vel placerat consequat. Pellentesque quis consequat libero.
                                 </Typography>
 
                             </Stack>
@@ -241,3 +241,5 @@ class ObjectDetail extends React.Component<any>{
 
 export default WrappedObjectDetail;
 
+
+// {this.currMetObj.description}

@@ -1,0 +1,15 @@
+.mainFont{
+    font-size: 1.25rem !important;
+}
+
+.title{
+    text-align:center;
+}
+
+.firstParagraph{
+    padding-top: 8px !important;
+}
+
+.rightAlign{
+    text-align: center !important;
+}
