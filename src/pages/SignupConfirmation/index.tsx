@@ -81,7 +81,7 @@ const SignupConfirmation: FunctionComponent = (props): ReactElement => {
                     sx={{alignItems: 'start', width: '85%'}}
                 >
                     <Typography className="mainFont" variant={"body1"} component={"p"}>
-                        1. Scan an object's QR code
+                        1. When you like a work of art,  scan its QR code with your camera app. You will be taken to the "More Info" page about that work
                     </Typography>
                     <Stack
                         spacing={1}
@@ -89,9 +89,8 @@ const SignupConfirmation: FunctionComponent = (props): ReactElement => {
                         sx={{alignItems: 'start',  width: '100%',  paddingTop: '8px'}}
                     >
                         <Typography className="mainFont" variant={"body1"} component={"p"}>
-                            2. Add it to your collection
+                            2. If you like it, add it to your collection by clicking a button that looks like this:
                         </Typography>
-
 
                         <Stack
                             spacing={0}
@@ -108,7 +107,7 @@ const SignupConfirmation: FunctionComponent = (props): ReactElement => {
                         sx={{alignItems: 'start', paddingTop: '8px'}}
                     >
                         <Typography className="mainFont" variant={"body1"} component={"p"}>
-                            3. Curate saved objects in your own space
+                            3. If you're done collecting works, curate these saved objects in your own space by using the Room Builder, which you navigate to via a button that looks like this:
                         </Typography>
 
                         <Stack
@@ -122,6 +121,10 @@ const SignupConfirmation: FunctionComponent = (props): ReactElement => {
                 </Stack>
 
             </Stack>
+
+            <Typography className="title" variant={"body1"} component={"p"}>
+                Feel free to close this browser tab as you peruse the art!
+            </Typography>
         </Container>
 
     );
