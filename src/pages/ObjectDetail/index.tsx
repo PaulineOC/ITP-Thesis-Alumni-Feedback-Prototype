@@ -203,8 +203,6 @@ class ObjectDetail extends React.Component<any>{
                                     {this.currMetObj.metLocation}
                                 </Typography>
 
-                                {this.renderAlert()}
-
                                 <Box sx={{width: '100%', display: 'flex', justifyContent: 'space-evenly' }}>
                                     <Button
                                         disabled={hasAddedCurrArt}
@@ -231,7 +229,7 @@ class ObjectDetail extends React.Component<any>{
                                 </Box>
 
                                 <Typography variant={"body2"} component="h5" id={"descriptionParagraph"}>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris accumsan vulputate mollis. Quisque maximus mi eu augue ultricies rhoncus. Vestibulum ac orci eget odio congue mattis. Curabitur id sapien nec sem mattis porta non eu enim. Sed elementum metus dignissim faucibus porta. Ut ullamcorper neque in placerat interdum. Pellentesque pharetra erat vel placerat consequat. Pellentesque quis consequat libero.
+                                    {this.currMetObj.description}
                                 </Typography>
 
                             </Stack>

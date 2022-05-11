@@ -78,7 +78,7 @@ export const OBJECT_DATA = [
         creatorNationality: 'Japanese',
         placeOfOrigin: null,
         metLocation: `On View At the Met Fifth Avenue in Gallery 241`,
-        description: `The decorative style of this silk tapestry is typical of Central Asia, where motifs enjoyed great longevity and creative recombination. The form of the dragon, with its long snout and its tail hooked behind its leg, represents a Tang-dynasty convention that survived in Central Asia until at least the Yuan dynasty, founded in 1271 by the Mongol conqueror Khubilai Khan. Placing a dragon on flowers is most likely a Central Asian invention. The brilliant colors and the vitality of the animals are also characteristic features of tapestries of the region, which were probably produced by Uighurs, known for their splendid tapestry-woven clothing.`,
+        description: `This beguiling scene of a girl lulled by the sound of a softly boiling tea cauldron, set on a portable hearth of the type used during the summer, is one of Harunobu’s Eight Parlor Views (Zashiki hakkei). It playfully alludes to “Night Rain,” one of the Eight Views of the Xiao and Xiang Rivers in China, a venerable theme in both Chinese and Japanese painting. Here the summer mood intrinsic to that landscape is transposed to the interior of an Edo (Tokyo) house of pleasure. Harunobu’s work is distinctive for its subtle tonality, achieved by mixing pigments rather than by superimposing two printed colors.`,
         artworkDetails: {
             Title: `At the Seaside`,
             Artist: `William Merritt Chase (American, Williamsburg, Indiana 1849–1916 New York)`,
@@ -119,7 +119,7 @@ export const OBJECT_DATA = [
         department: enums.DEPARTMENTS.EGYPTIAN_ART,
         imgSrc: `https://collectionapi.metmuseum.org/api/collection/v1/iiif/548212/1348549/main-image`,
         title: `Relief of Nebhepetre Mentuhotep II and the Goddess Hathor`,
-        date: `ca. 2020-2000 B.C.`,
+        date: `ca. 2010-2000 B.C.`,
         creator: `Middle Kingdom`,
         creatorNationality: null,
         placeOfOrigin: null,
@@ -216,7 +216,7 @@ export const OBJECT_DATA = [
         creatorNationality: `Italian`,
         placeOfOrigin: null,
         metLocation: `On View At the Met Fifth Avenue in Gallery 288`,
-        description: `In this work, the viewer is transported to a hot summer day in the Netherlands. It belongs to a series, commissioned by the Antwerp merchant Niclaes Jongelinck for his suburban home. The cycle originally included six paintings showing the times of the year. Apart from The Harvesters, which is usually identified as representing July–August, four other paintings of the group have survived (now in the Kunsthistorisches Museum, Vienna, and Lobkowicz Collection, Prague). Bruegel’s series is a watershed in the history of Western art. The religious pretext for landscape painting has been suppressed in favor of a new humanism, and the unidealized description of the local scene is based on natural observations.`,
+        description: `While Cupid confirms Caravaggio’s allegorical frame for representing Music, the artist equally engages with contemporary performance and individualized models, including a self-portrait in the second boy from the right. Caravaggio’s contemporary, Giovanni Baglione, recorded that the artist painted "a concert, with some youths portrayed from nature very well" immediately after joining the household of his first great patron, Cardinal Francesco Maria del Monte. Most likely, this is the same painting and is one of several employing the half-length, earthy yet sensual figures with which Caravaggio made his name upon arriving in Rome.`,
         artworkDetails: {
             Title: `The Flower Girl`,
             Artist: `Charles Cromwell Ingham (American (born Ireland), Dublin 1786–1863 New York)`,
@@ -274,8 +274,6 @@ export const OBJECT_DATA = [
             "Accession Number": '02.71',
         },
     },
-
-
     {
         metId: 11207,
         dbTitle: enums. DB_TITLE.FLOWER_GIRL,
