@@ -26,25 +26,44 @@ import {User} from '../../utils/apiModels';
 import MyMetButton from './MyMetButton.png';
 import RoomBuilderButton from './RoomBuilderButton.png';
 import './SignupConfirmation.css';
+import UserStore from '../../stores/User';
 
 const SignupConfirmation: FunctionComponent = (props): ReactElement => {
 
     const navigate = useNavigate();
 
-    const [hasLoaded, setUsername] = useState('');
+    const [userName, setUsername] = useState('');
 
     useEffect(() => {
-        console.log(
-            "Occurs ONCE, AFTER the initial render."
-        );
+
+        const userCookies = document.cookie;
+        if(userCookies !== undefined ){
+            const splitCookies = userCookies.split('; ');
+            if(splitCookies !== undefined){
+
+                const idCookie = splitCookies.find((row)=>{
+                    return (row.includes('user_id='));
+                });
+                const username = splitCookies.find((row)=>{
+                    return (row.includes('username='));
+                });
+                if(username !== undefined ){
+                    const userNameActual = username.split("=");
+                    console.log(username);
+                    setUsername(userNameActual[1]);
+                }
+            }
+        }
     }, []);
 
     return (
-
         <Container sx={{paddingTop: "4vh", paddingBottom: "4vh%"}}>
-
             <Typography className="title" variant={"h4"} component={"h4"}>
                 Thanks for signing up!
+            </Typography>
+
+            <Typography className="title" variant={"body1"} component={"p"}>
+                Your username is: {userName}
             </Typography>
 
             <Stack

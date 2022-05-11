@@ -88,6 +88,9 @@ const Welcome: FunctionComponent = (props): ReactElement => {
                 <Typography variant={"body1"} component={"p"}>
                     In this experience you will be able to scan artworks you’re interested, save them to your profile, and then place them in your own virtual space.
                 </Typography>
+                <Typography variant={"body2"} component={"p"}>
+                    Please make sure you have cookies enabled on your browser or otherwise you won't be able to use the app.
+                </Typography>
 
                 <TextField
                     id="title-input"

@@ -32,7 +32,6 @@ class ObjectDetail extends React.Component<any>{
         this.store = new UserStore();
         this.store.setStatus(enums.STATUS.SUCCESS);
 
-
         let objId = this.props.params.objectId;
 
         this.currMetObj = OBJECT_DATA.find((item)=>{
@@ -118,22 +117,29 @@ class ObjectDetail extends React.Component<any>{
     }
 
     onRoomBuilderClick = () => {
-        if(this.store.previouslySavedArt && this.store.previouslySavedArt.length > 0){
-            this.props.history.bind(this, '/room-builder').call();
-        }
-        else{
-            alert("FYI, room builder won't work properly if you don't have any saved objects!");
-            this.props.history.bind(this, '/room-builder').call();
-        }
+        this.props.history.bind(this, '/room-builder').call();
+        //
+        // if(this.store.previouslySavedArt && this.store.previouslySavedArt.length > 0){
+        //     this.props.history.bind(this, '/room-builder').call();
+        // }
+        // else{
+        //     alert("FYI, room builder won't work properly if you don't have any saved objects!");
+        //     this.props.history.bind(this, '/room-builder').call();
+        // }
     };
 
     addToMyMetOnClick = async () => {
         const updatedUser = await this.store.addObjectToUserCollection(this.currMetObj.dbTitle);
-        if(updatedUser){;
-            this.store.setPreviouslySavedArt(updatedUser.savedArt);
+        console.log("here is updated user after saving:");
+        console.log(updatedUser);
+
+        if(updatedUser && updatedUser[1]){
+            console.log(updatedUser[1]);
+            //this.store.setPreviouslySavedArt(updatedUser[1].savedArt);
             this.store.setHasAddedCurrArt();
             this.forceUpdate();
         }
+
     };
 
     renderAlert(){

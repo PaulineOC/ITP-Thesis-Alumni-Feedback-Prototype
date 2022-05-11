@@ -50,7 +50,6 @@ class UserStore {
 
     @action.bound
     setHasAddedCurrArt(){
-        console.log("in here");
         this.hasAddedCurrArt = true;
     }
 
@@ -78,7 +77,6 @@ class UserStore {
 
     @action.bound
     setPreviouslySavedArt( savedArt :string[]){
-        console.log(savedArt);
         this.previouslySavedArt = savedArt;
     }
 
