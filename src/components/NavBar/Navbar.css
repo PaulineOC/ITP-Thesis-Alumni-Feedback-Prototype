@@ -1,18 +1,14 @@
 
-
-
 .nav-container{
     flex-grow: 1;
     text-align: center;
 }
 
-
 .nav{
-
     width: 100%;
     display: flex;
     justify-content: initial;
-    background-color: #d32f2f;
+    background-color: #e4002b !important;
 }
 
 

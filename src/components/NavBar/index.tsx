@@ -21,7 +21,7 @@ function NavBar() {
                 <Toolbar
                     className={"nav"}
                     style={{
-                        height: '60px'}}
+                        height: '60px', backgroundColor: '#e4002b !important'}}
                 >
                     <Box sx={{
                         display: 'flex',

@@ -106,6 +106,7 @@ const Welcome: FunctionComponent = (props): ReactElement => {
                 <Button
                     component="span"
                     variant="contained"
+                    sx={{backgroundColor: "#e4002b !important"}}
                     color="error"
                     onClick={onButtonClick}
              >
