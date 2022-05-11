@@ -118,18 +118,19 @@ class ObjectDetail extends React.Component<any>{
     }
 
     onRoomBuilderClick = () => {
-         if(this.store.canGoToRoomBuilder) {
+        if(this.store.previouslySavedArt && this.store.previouslySavedArt.length > 0){
             this.props.history.bind(this, '/room-builder').call();
         }
-         else{
-             alert("Please save at least one object to continue to the room builder")
-         }
+        else{
+            alert("FYI, room builder won't work properly if you don't have any saved objects!");
+            this.props.history.bind(this, '/room-builder').call();
+        }
     };
 
     addToMyMetOnClick = async () => {
         const updatedUser = await this.store.addObjectToUserCollection(this.currMetObj.dbTitle);
-        if(updatedUser){
-            this.store.setPreviouslySavedArt(updatedUser.savedArt)
+        if(updatedUser){;
+            this.store.setPreviouslySavedArt(updatedUser.savedArt);
             this.store.setHasAddedCurrArt();
             this.forceUpdate();
         }
