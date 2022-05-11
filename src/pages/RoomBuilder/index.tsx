@@ -10,10 +10,10 @@ import {
 } from '@mui/material';
 
 const unityContext = new UnityContext({
-    loaderUrl: "FE-Test-5.loader.js",
-    dataUrl: "FE-Test-5.data",
-    frameworkUrl: "FE-Test-5.framework.js",
-    codeUrl: "FE-Test-5.wasm",
+    loaderUrl: "10-E.loader.js",
+    dataUrl: "10-E.data",
+    frameworkUrl: "10-E.framework.js",
+    codeUrl: "10-E.wasm",
 });
 
 const RoomBuilder  = () => {
@@ -79,14 +79,14 @@ const RoomBuilder  = () => {
     useEffect( function () {
         unityContext.on("SendScreenshot", (imgData)=>{
             console.log("Send Screenshot fired from Unity: ");
-            //console.log(imgData);
 
-            const allImgs = imgData.split('**BREAK**');
-            console.log(allImgs.length);
+            const bothTypesOfImgs = imgData.split('**IMG_TYPE_SEPARATOR**');
+            const allWallImgs = bothTypesOfImgs[0].split('**BREAK**');
+            const allOverheadImgs = bothTypesOfImgs[1].split('**BREAK**');
 
-            store.UpdateUserWallImages(allImgs).then((data)=>{
-
+            store.UpdateAllUserImages(allWallImgs, allOverheadImgs).then((data: any)=>{
                 console.log("in then");
+                console.log(data);
             });
         });
     }, []);
@@ -105,6 +105,8 @@ const RoomBuilder  = () => {
             console.log(message);
         });
     }, []);
+
+
 
 
     const Test = () => {

@@ -15,6 +15,10 @@ class ApiService {
         return http.patch('/users/upload-wall-images/', body);
     }
 
+    async uploadUserAllImages(body: {user: User}){
+        return http.patch('/users/upload-all-images/', body);
+    }
+
     async getUser(id: string, uniqueId: string){
 
         // router.get('/get/:userId', async function(req, res, next){

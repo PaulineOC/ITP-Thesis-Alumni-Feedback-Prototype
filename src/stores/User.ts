@@ -33,6 +33,21 @@ class UserStore {
     @observable
     hasAddedCurrArt = false;
 
+    @observable
+    previouslySavedArt: string[] = [];
+
+    @observable
+    hasTriedToGoToRoomBuilder = false;
+
+
+    @computed
+    get canGoToRoomBuilder(){
+        if(this.previouslySavedArt.length > 0 ){
+            return true;
+        }
+        return false;
+    }
+
     @action.bound
     setHasAddedCurrArt(){
         console.log("in here");
@@ -62,6 +77,17 @@ class UserStore {
     }
 
     @action.bound
+    setPreviouslySavedArt( savedArt :string[]){
+        console.log(savedArt);
+        this.previouslySavedArt = savedArt;
+    }
+
+    @action.bound
+    setHasTriedToGoToRoomBuilder(){
+        this.hasTriedToGoToRoomBuilder = true;
+    }
+
+    @action.bound
     setStatus(newStatus: string): void {
         this.status = newStatus;
     }
@@ -79,9 +105,11 @@ class UserStore {
             } as User;
             //
             const { data }  = await ApiService.addObjectToUserCollection({user});
-            if(data && data.user && data.user[0] === 1){
+
+            if(data && data.user){
+                console.log(data.user);
                 this.setStatus(enums.STATUS.SUCCESS);
-                return data.user[1][0];
+                return data.user;
             }
 
         }
@@ -107,6 +135,13 @@ class UserStore {
     }
 
     @action.bound
+    async setUserSavedObjs() {
+        const userArt = await this.getUserSavedObjs();
+        console.log(userArt);
+        this.previouslySavedArt = userArt ?? [];
+    }
+
+    @action.bound
     async UpdateUserWallImages(wallImages: string[]){
         try{
             this.setStatus(enums.STATUS.PENDING);
@@ -119,6 +154,31 @@ class UserStore {
             } as User;
 
             const { data }  = await ApiService.uploadUserWallImages({user});
+
+            // if(data && data.user && data.user.savedArt){
+            //     this.setStatus(enums.STATUS.SUCCESS);
+            //     return data.user.savedArt ?? [];
+            // }
+        }
+        catch(e) {
+            this.setStatus(enums.STATUS.FAILURE);
+        }
+    }
+
+    @action.bound
+    async UpdateAllUserImages(wallImages: string[], overheadImages: string[]){
+        try{
+            this.setStatus(enums.STATUS.PENDING);
+
+            const user = {
+                id: this.userId,
+                username: this.userName,
+                uniqueId: this.userUniqueId,
+                wallImagesToSave: wallImages,
+                overheadImagesToSave: overheadImages,
+            } as User;
+
+            const { data }  = await ApiService.uploadUserAllImages({user});
 
             // if(data && data.user && data.user.savedArt){
             //     this.setStatus(enums.STATUS.SUCCESS);
