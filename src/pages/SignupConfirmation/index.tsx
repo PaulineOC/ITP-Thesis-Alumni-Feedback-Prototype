@@ -62,7 +62,7 @@ const SignupConfirmation: FunctionComponent = (props): ReactElement => {
                 Thanks for signing up!
             </Typography>
 
-            <Typography className="title" variant={"body1"} component={"p"}>
+            <Typography className="mainFont firstParagraph" variant={"body1"} component={"p"}>
                 Your username is: {userName}
             </Typography>
 
@@ -122,7 +122,7 @@ const SignupConfirmation: FunctionComponent = (props): ReactElement => {
 
             </Stack>
 
-            <Typography className="title" variant={"body1"} component={"p"}>
+            <Typography className="title mainFont firstParagraph" variant={"body1"} component={"p"}>
                 Feel free to close this browser tab as you peruse the art!
             </Typography>
         </Container>

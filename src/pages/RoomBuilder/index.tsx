@@ -10,10 +10,10 @@ import {
 } from '@mui/material';
 
 const unityContext = new UnityContext({
-    loaderUrl: "10-G.loader.js",
-    dataUrl: "10-G.data",
-    frameworkUrl: "10-G.framework.js",
-    codeUrl: "10-G.wasm",
+    loaderUrl: "10-H.loader.js",
+    dataUrl: "10-H.data",
+    frameworkUrl: "10-H.framework.js",
+    codeUrl: "10-H.wasm",
 });
 
 const RoomBuilder  = () => {
